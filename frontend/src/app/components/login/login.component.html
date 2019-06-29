@@ -1,1 +1,35 @@
-<p>login works!</p>
+<div class="mt-4 col-8 offset-2">
+    <div class="card">
+        <div class="card-header">Login Here</div>
+        <div class="card-body">
+            <form #loginForm="ngForm" (ngSubmit)="onSubmit()">
+
+                <!-- <div class="alert alert-danger" *ngIf="errorMsg">
+                    {{errorMsg}}
+                </div> -->
+
+                <div class="form-group row">
+                    <label for="email" class="col-sm-2 col-form-label">Email</label>
+                    <div class="col-sm-10">
+                        <input type="email" #email="ngModel" name="email" class="form-control" id="email" placeholder="Email" [(ngModel)]="form.email" required>
+                        <small class="text-danger" *ngIf="errorMsg"><strong>{{errorMsg}}</strong></small>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="password" class="col-sm-2 col-form-label">Password</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" [(ngModel)]="form.password" required>
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <div class="col-sm-10 offset-2">
+                        <button [disabled]="loginForm.invalid" type="submit" class="btn btn-primary">Sign in</button>
+                        <a routerLink="/signup" class="btn btn-info float-right">Sign Up</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
